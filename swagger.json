@@ -5,7 +5,7 @@
     "title": "REST API",
     "description": ""
   },
-  "host": "https://smallcasetrade.herokuapp.com",
+  "host": "smallcasetrade.herokuapp.com",
   "basePath": "/api",
   "schemes": [
     "https"
