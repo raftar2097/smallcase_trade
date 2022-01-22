@@ -13,7 +13,7 @@
   "paths": {
     "/trade/": {
       "get": {
-        "description": "",
+        "description": "Fetch all the trades",
         "parameters": [],
         "responses": {
           "200": {
@@ -25,7 +25,7 @@
         }
       },
       "post": {
-        "description": "",
+        "description": "Creates a new trade based on BUY or SELL order type",
         "parameters": [
           {
             "name": "body",
@@ -64,7 +64,7 @@
     },
     "/trade/{tradeId}": {
       "get": {
-        "description": "",
+        "description": "Fetches the details of a trade with a unique trade id",
         "parameters": [
           {
             "name": "tradeId",
@@ -86,7 +86,7 @@
         }
       },
       "put": {
-        "description": "",
+        "description": "Updates a trade having a unique trade id",
         "parameters": [
           {
             "name": "tradeId",
@@ -129,7 +129,7 @@
         }
       },
       "delete": {
-        "description": "",
+        "description": "Deletes a trade having a unique trade id",
         "parameters": [
           {
             "name": "tradeId",
@@ -153,7 +153,7 @@
     },
     "/portfolio/": {
       "get": {
-        "description": "",
+        "description": "Returns a list of stock in the portfolio",
         "parameters": [],
         "responses": {
           "200": {
@@ -167,7 +167,7 @@
     },
     "/portfolio/return": {
       "get": {
-        "description": "",
+        "description": "Gives the total return on the exising portfolio assuming current market price of any stock to be 100",
         "parameters": [],
         "responses": {
           "200": {
