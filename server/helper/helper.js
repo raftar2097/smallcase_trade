@@ -122,7 +122,7 @@ const deleteCreateCheck = async (trade,updateTrade)=>{
             createStock = null;
         }
     }else{
-        createStock = await Stock.find({updateOne});
+        createStock = await Stock.find({updateTrade});
     }
     //check create flow
     if(createTradeChecker(updateTrade.quantity,updateTrade.trade_type,createStock)){

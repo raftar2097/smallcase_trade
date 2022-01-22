@@ -6,11 +6,18 @@ const Stock = require('../models/stock');
 router.get('/',async (req,res)=>{
     try{
         const stocks = await Stock.find({});
-        res.status(200).send(stocks);
+        let result = {};
+        if(stocks){
+            result = await stocks.map((stock)=>{
+                const {price,quantity,stock_symbol} = stock;
+                return{price,quantity,stock_symbol};
+            })
+        }
+        res.status(200).json(result);
     }
     catch(err){
         console.log(err);
-        res.status(500).send({error:'Internal Server Error',err});
+        res.status(500).json({error:'Internal Server Error',err});
     }
 })
 
@@ -39,12 +46,12 @@ router.get('/return',async (req,res)=>{
 
         data.totalReturn = `${total}%`;
         data.Return = marketCost - buyCost;
-        res.status(200).send(data);
+        res.status(200).json(data);
         return;
     }
     catch(err){
         console.log(err);
-        res.status(500).send({error:'Internal Server Error',err});
+        res.status(500).json({error:'Internal Server Error',err});
     }
 })
 
