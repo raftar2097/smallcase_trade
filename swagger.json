@@ -8,7 +8,7 @@
   "host": "https://smallcasetrade.herokuapp.com",
   "basePath": "/api",
   "schemes": [
-    "http"
+    "https"
   ],
   "paths": {
     "/trade/": {
