@@ -4,6 +4,9 @@ const app = express();
 const api = require('./server/api');
 const db = require('./server/db');
 
+const swaggerUi = require('swagger-ui-express')
+const swaggerDocument = require('./swagger.json')
+
 //Configure .env
 require('dotenv').config();
 
@@ -19,6 +22,7 @@ db.connect({
 }).then(() => {
     //Handle /api with the api middleware
     app.use('/api', api);
+    app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
     //Start listening on port
     app.listen(port, () => {

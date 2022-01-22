@@ -5,6 +5,7 @@
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
+    "swagger-autogen": "node swagger.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -16,6 +17,8 @@
     "dotenv": "^14.2.0",
     "express": "^4.17.2",
     "mongoose": "^6.1.7",
+    "swagger-autogen": "^2.18.8",
+    "swagger-ui-express": "^4.3.0",
     "web-vitals": "^2.1.4"
   }
 }
